@@ -32,12 +32,12 @@
     - name: test2 receipt of CO VAULT parameter
       debug:
         msg: "secret2 ={{ secret2 }}="
-      when: TON_SECRET is defined
+      when: secret2 is defined
 
     - name: signal variable not found
       debug:
         msg: "variable secret2 not defined"
-      when: TON_SECRET is undefined
+      when: secret2 is undefined
 
 #  roles:
 #    - python
