@@ -18,7 +18,7 @@
 
 # TEST CO vault secret parameter
 
-    - name: test receipt of CO VAULT parameter
+    - name: test1 receipt of CO VAULT parameter
       debug:
         msg: "TON_SECRET ={{ TON_SECRET }}="
       when: TON_SECRET is defined
@@ -29,6 +29,15 @@
       when: TON_SECRET is undefined
 
 
+    - name: test2 receipt of CO VAULT parameter
+      debug:
+        msg: "secret2 ={{ secret2 }}="
+      when: TON_SECRET is defined
+
+    - name: signal variable not found
+      debug:
+        msg: "variable secret2 not defined"
+      when: TON_SECRET is undefined
 
 #  roles:
 #    - python
