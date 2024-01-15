@@ -6,15 +6,24 @@
   tasks:
 
 # TEST CO specific parameter
-    - name: test receipt of CO parameter
+    - name: test receipt of simple string component parameter
       debug:
-        msg: "TON_TEST ={{ TON_TEST }}="
-      when: TON_TEST is defined
+        msg: "TON_PLUGIN_PARM ={{ TON_PLUGIN_PARM }}="
+      when: TON_PLUGIN_PARM is defined
+    - name: signal variable not found
+      debug:
+        msg: "variable TON_PLUGIN_PARM not defined"
+      when: TON_PLUGIN_PARM is undefined
+
+    - name: test receipt of component parameter with special chars
+      debug:
+        msg: "TON_ESCAPE ={{ TON_ESCAPE }}="
+      when: TON_ESCAPE is defined
 
     - name: signal variable not found
       debug:
-        msg: "variable TON_TEST not defined"
-      when: TON_TEST is undefined
+        msg: "variable TON_ESCAPE not defined"
+      when: TON_ESCAPE is undefined
 
 # TEST CO vault secret parameter
 
